@@ -1,0 +1,45 @@
+﻿body {
+    padding: 50px;
+    font-family: 'Roboto', serif;
+}
+
+.jumbotron {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #FFF;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+a {
+    color: #00B7FF;
+    text-decoration: underline;
+
+}
+
+label {
+    padding-right: 10px;
+}
+
+table * {
+    padding: 5px;
+}
+
+button {
+    margin-top: 20px;
+}
+
+#table-controls {
+    clear:both;
+}
+
+.fancy {
+    font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+.img-fluid {
+    max-width: 75px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+.optimization-row-template {
+  display: none;
+}

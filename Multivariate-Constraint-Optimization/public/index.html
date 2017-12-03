@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+  <link rel="stylesheet" href="stylesheets/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto|Saira+Semi+Condensed" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="javascripts/index.js"></script>
+  <script src="javascripts/tablelogic.js"></script>
+  <title>Resource Allocation for GM</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 text-center fancy">
+          Team Electron presents...
+      </div>
+    </div>
+    <div class="row">
+      <div class="jumbotron col-md-12 text-center">
+        <h1><img class="img-fluid" src="images/GMLogo.jpg" /> Energy Commitment Optimizer</h1>
+      </div>
+      <div>
+        <p>
+          This tool determines the set of optimal efficiency improvement projects to minimize costs
+          while attaining sustainable energy goals (CO2 Reduction). 
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="threshold">CO2 Reducation Target</label><br />
+        <input type="number" id="threshold" hint="Target" value="200000" />
+      </div>
+      <div class="col-md-3">
+        <label for="threshold">CO2 Reducation Target (%)</label><br />
+        <input type="number" id="percent" hint="Target (%)" value="3" />
+      </div>
+      <div class="col-md-3">
+        <lable for="budget">Budget ($)</lable><br />
+        <input type="number" id="budget" hint="Budget" value="10000000" />
+      </div>
+      <div class="col-md-3">
+        <label for="penalty-cost">PPA Cost ($) per unit CO2e displacement</label><br />
+        <input type="number" id="penalty-cost" hint="PPA Cost" value="33.1" />
+      </div>
+      </div>
+    <div class="row clearfix">
+		<div class="col-md-12 column">
+			<table class="table table-bordered table-hover" id="inputs">
+				<thead>
+					<tr>
+						<!--<th class="text-center">
+							#
+						</th>-->
+						<th class="text-center">
+							Business Unit
+						</th>
+						<th class="text-center">
+							Item Description
+						</th>
+						<th class="text-center">
+							Item Cost
+						</th>
+                        <th class="text-center">
+							Co2 Reduction
+						</th>
+                        <th class="text-center">
+							Total Payback (Benefit)
+						</th>
+                        <th class="text-center">
+							Delete
+						</th>
+					</tr>
+				</thead>
+				<tbody id="tab_logic">
+					<tr>
+						<td>
+						<input type="text" class="group-input form-control" value="1"/>
+						</td>
+						<td>
+						<input type="text" class="desc-input form-control" value="Process Improvements"/>
+						</td>
+						<td>
+						<input type="text" class="cost-input form-control" value="299594"/>
+						</td>
+                        <td>
+						<input type="text" class="heuristic-input form-control" value="59121"/>
+						</td>
+                        <td>
+						<input type="text"  class="optimization-input form-control" value="238990136"/>
+						</td>
+                        <td>
+						<button type="text" class="delete form-control" disabled="disabled">Delete</button>
+						</td>
+					</tr>
+                  <tr>
+                    <td>
+                      <input type="text" class="group-input form-control" value="2" />
+                    </td>
+                    <td>
+                      <input type="text" class="desc-input form-control" value="Behavioral Change" />
+                    </td>
+                    <td>
+                      <input type="text" class="cost-input form-control" value="8110" />
+                    </td>
+                    <td>
+                      <input type="text" class="heuristic-input form-control" value="0" />
+                    </td>
+                    <td>
+                      <input type="text" class="optimization-input form-control" value="1414333" />
+                    </td>
+                    <td>
+                      <button type="text" class="delete form-control" disabled="disabled">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" class="group-input form-control" value="2" />
+                    </td>
+                    <td>
+                      <input type="text" class="desc-input form-control" value="Energy: building" />
+                    </td>
+                    <td>
+                      <input type="text" class="cost-input form-control" value="2019877" />
+                    </td>
+                    <td>
+                      <input type="text" class="heuristic-input form-control" value="10973" />
+                    </td>
+                    <td>
+                      <input type="text" class="optimization-input form-control" value="6847519" />
+                    </td>
+                    <td>
+                      <button type="text" class="delete form-control" disabled="disabled">Delete</button>
+                    </td>
+                  </tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+    <div class="row clearfix">
+	  <div class="col-md-6" id="table-controls">
+      <a id="add_row" style="text-decoration: underline;">Add Row</a>
+      </div>
+      <div class="col-md-6">
+        <button id="optimize-button">Optimize</button>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="row clearfix">
+      <div class="col-md-6">
+        <table>
+          <tr>
+            <th>Indicator</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>Total Cost</td>
+            <td id="total-cost-value"></td>
+          </tr>
+          <tr>
+            <td>Budget</td>
+            <td id="budget-value"></td>
+          </tr>
+          <tr>
+            <td>Improvement Cost</td>
+            <td id="improvement-cost-value"></td>
+          </tr>
+          <tr>
+            <td>PPA Cost</td>
+            <td id="pen-cost2"></td>
+          </tr>
+          <tr>
+            <td>Average Cost per unit CO2e reduction</td>
+            <td id="average-cost-value"></td>
+          </tr>
+          
+        </table>
+      </div>
+      <div class="col-md-6">
+        <table>
+          <tr>
+            <th>
+              Indicator
+            </th>
+            <th>
+              Value
+            </th>
+            </tr>
+          <tr>
+            <td>Total Co2 Reduction</td>
+            <td id="total-heuristic"></td>
+          </tr>
+          <tr>
+            <td>Goal Co2 Reduction</td>
+            <td id="goal-co2-reduction-value"></td>
+          </tr>
+          <tr>
+            <td>Improvement Co2 Reduction</td>
+            <td id="improvement-co2-reduction-value"></td>
+          </tr>
+          <tr>
+            <td>PPA Co2 Reduction</td>
+            <td id="ppa-co2-reduction-value"></td>
+          </tr>
+          <tr>
+            <td>Total Benefit</td>
+            <td id="total-benefit-value"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row" id="bybu">
+      <div class="col-md-12">
+        <table>
+          <thead>
+          <tr>
+            <th>Business Unit</th>
+            <th>Current CO2e Levels</th>
+            <th>Recommended Projects</th>
+            <th>Project Benefit</th>
+            <th>Payment for Project Cost</th>
+            <th>CO2 Production Penalty</th>
+            <th>Net Allocation Payment</th>
+          </tr>
+            </thead>
+          <tbody id="bybub">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
